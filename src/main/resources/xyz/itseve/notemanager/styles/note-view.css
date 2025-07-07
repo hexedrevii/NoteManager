@@ -1,0 +1,48 @@
+.root {
+  /* Base Colors */
+   -cpt-base: #24273a;
+   -cpt-mantle: #1e2030;
+   -cpt-crust: #181926;
+
+   /* Text Colors */
+   -cpt-text: #cad3f5;
+   -cpt-subtext1: #b8c0e0;
+   -cpt-subtext0: #a5adcb;
+
+   /* Surface */
+   -cpt-surface0: #363a4f;
+   -cpt-surface1: #494d64;
+   -cpt-surface2: #5b6078;
+
+   /* Overlay */
+   -cpt-overlay0: #6e738d;
+   -cpt-overlay1: #8087a2;
+   -cpt-overlay2: #939ab7;
+
+   /* Highlight Groups */
+   -cpt-blue: #8aadf4;
+   -cpt-lavender: #b7bdf8;
+   -cpt-sapphire: #7dc4e4;
+   -cpt-sky: #91d7e3;
+   -cpt-teal: #8bd5ca;
+   -cpt-green: #a6da95;
+   -cpt-yellow: #eed49f;
+   -cpt-peach: #f5a97f;
+   -cpt-maroon: #ee99a0;
+   -cpt-red: #ed8796;
+   -cpt-mauve: #c6a0f6;
+   -cpt-pink: #f5bde6;
+   -cpt-flamingo: #f0c6c6;
+   -cpt-rosewater: #f4dbd6;
+}
+
+.bg-view {
+    -fx-background: -cpt-base;
+
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
