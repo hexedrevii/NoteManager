@@ -46,3 +46,28 @@
     -fx-border-color: transparent;
     -fx-border-width: 0;
 }
+
+.menu {
+    -fx-background-color: -cpt-surface0;
+}
+
+.menu .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -cpt-text;
+}
+
+.context-menu {
+    -fx-background-color: -cpt-surface0;
+}
+
+.menu-item .label {
+    -fx-text-fill: -cpt-text;
+}
+
+.menu-item:focused {
+    -fx-background-color: -cpt-mauve;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: white;
+}

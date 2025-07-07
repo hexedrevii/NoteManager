@@ -6,7 +6,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,7 +17,11 @@ public class Note {
     private String content;
 
     private final LocalDateTime added;
+
     private final UUID id;
+    public final UUID getId() {
+        return id;
+    }
 
     private VBox body;
     public final VBox getBody() {
