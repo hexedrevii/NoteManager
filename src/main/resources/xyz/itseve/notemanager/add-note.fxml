@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xyz.itseve.notemanager.controllers.AddNoteController">
+    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+        <Label alignment="TOP_LEFT" text="Note Title">
+            <HBox.margin>
+                <Insets left="5.0" right="5.0" />
+            </HBox.margin>
+        </Label>
+        <TextField promptText="Title..." fx:id="noteTitle" />
+    </HBox>
+    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+        <Label text="Priority">
+           <HBox.margin>
+               <Insets left="5.0" right="5.0"/>
+           </HBox.margin>
+        </Label>
+        <ComboBox fx:id="notePriority" prefWidth="164.0" promptText="Note Priority..."/>
+    </HBox>
+    <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+        <Button mnemonicParsing="false" text="Create" onAction="#createNote">
+            <HBox.margin>
+                <Insets bottom="5.0" right="5.0" />
+            </HBox.margin>
+        </Button>
+        <Button mnemonicParsing="false" text="Cancel" onAction="#cancelCreation">
+            <HBox.margin>
+                <Insets bottom="5.0" right="5.0" />
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>
