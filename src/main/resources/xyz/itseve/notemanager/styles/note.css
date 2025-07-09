@@ -20,6 +20,23 @@
     -fx-background-radius: 10px;
 }
 
+.btn-bottom {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+    -fx-cursor: hand;
+}
+
+.edit-btn {
+    -fx-padding: 3 0 0 0;
+}
+
 .note-priority {
     -fx-opacity: 0.4;
 }

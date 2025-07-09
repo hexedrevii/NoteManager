@@ -23,6 +23,11 @@ public class AddNoteController implements Initializable {
         parentStage = stage;
     }
 
+    private NoteViewController noteController;
+    public void setNoteController(NoteViewController controller) {
+        noteController = controller;
+    }
+
     private Note note = null;
     public final Note getNote() {
         return note;
@@ -57,7 +62,7 @@ public class AddNoteController implements Initializable {
             return;
         }
 
-        note = new Note(title, "", NotePriority.valueOf(priority));
+        note = new Note(title, "", NotePriority.valueOf(priority), noteController);
         parentStage.close();
     }
 

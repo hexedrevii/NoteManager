@@ -30,7 +30,7 @@ public class NoteViewController implements Initializable {
         mainStage = stage;
     }
 
-    private final List<Note> notes = new ArrayList<Note>();
+    public final List<Note> notes = new ArrayList<Note>();
 
     private void calculateNotes(String txt) {
         cardHolder.getChildren().clear();
@@ -40,6 +40,10 @@ public class NoteViewController implements Initializable {
                 .toList();
 
         for (Note n : filtered) cardHolder.getChildren().add(n.getBody());
+    }
+
+    public void calculateNotes() {
+        calculateNotes(searchFilter.getText().trim().toLowerCase());
     }
 
     @Override
@@ -57,6 +61,7 @@ public class NoteViewController implements Initializable {
 
         AddNoteController controller = loader.getController();
         controller.setParentStage(addNote);
+        controller.setNoteController(this);
 
         addNote.setTitle("Add note");
         addNote.initModality(Modality.APPLICATION_MODAL);
@@ -70,7 +75,7 @@ public class NoteViewController implements Initializable {
         if (toAdd == null) return;
 
         notes.addFirst(toAdd);
-        calculateNotes(searchFilter.getText().trim().toLowerCase());
+        calculateNotes();
     }
 
     @FXML
