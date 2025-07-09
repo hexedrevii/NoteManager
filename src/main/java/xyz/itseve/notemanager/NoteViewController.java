@@ -3,33 +3,42 @@ package xyz.itseve.notemanager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class NoteViewController implements Initializable {
     @FXML public FlowPane cardHolder;
+    @FXML public TextField searchFilter;
+
+    private final List<Note> notes = new ArrayList<Note>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Note def = new Note("I WILL NOT FALTER", "I WILL NOT FALTER");
-        cardHolder.getChildren().add(def.getBody());
+        searchFilter.textProperty().addListener((obs, oldText, newText) -> {
+            cardHolder.getChildren().clear();
 
-        Note def1 = new Note("I WILL NOT FALTER 1", "I WILL NOT FALTER");
-        cardHolder.getChildren().add(def1.getBody());
+            List<Note> filtered = notes.stream()
+                .filter(note -> note.getTitle().toLowerCase().contains(newText.toLowerCase()))
+                .toList();
 
-        Note def2 = new Note("I WILL NOT FALTER 2", "I WILL NOT FALTER");
-        cardHolder.getChildren().add(def2.getBody());
+            for (Note n : filtered) cardHolder.getChildren().add(n.getBody());
+        });
 
-        Note def3 = new Note("I WILL NOT FALTER 3", "I WILL NOT FALTER");
-        cardHolder.getChildren().add(def3.getBody());
+        for (int i = 0; i < 6; i++) {
+            addNote("I WILL NOT FALTER " + i, "I WILL NOT FALTER");
+        }
+    }
 
-        Note def4 = new Note("I WILL NOT FALTER 4", "I WILL NOT FALTER");
-        cardHolder.getChildren().add(def4.getBody());
+    private void addNote(String name, String content) {
+        Note note = new Note(name, content);
+        cardHolder.getChildren().add(note.getBody());
 
-        Note def5 = new Note("I WILL NOT FALTER 5", "I WILL NOT FALTER");
-        cardHolder.getChildren().add(def5.getBody());
-
+        notes.add(note);
     }
 }

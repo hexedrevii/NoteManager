@@ -14,6 +14,10 @@ import java.util.UUID;
 
 public class Note {
     private String title;
+    public final String getTitle() {
+        return title;
+    }
+
     private String content;
 
     private final LocalDateTime added;
