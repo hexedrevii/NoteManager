@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xyz.itseve.notemanager.NoteViewController">
@@ -20,6 +21,22 @@
         <FlowPane fx:id="cardHolder" hgap="5.0" prefHeight="322.0" prefWidth="367.0" vgap="5.0">
          <padding>
             <Insets left="10.0" top="10.0" />
-         </padding></FlowPane>
+         </padding>
+        </FlowPane>
     </ScrollPane>
+    <HBox prefHeight="30.0" prefWidth="200.0" styleClass="action-bar">
+      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/search.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="5.0" top="6.0" />
+         </HBox.margin>
+      </ImageView>
+        <TextField fx:id="searchFilter" promptText="Search by title..." styleClass="search">
+           <HBox.margin>
+               <Insets left="4.0" top="2.4" />
+           </HBox.margin>
+        </TextField>
+    </HBox>
 </VBox>

@@ -47,6 +47,24 @@
     -fx-border-width: 0;
 }
 
+.action-bar {
+    -fx-background-color: -cpt-surface0;
+}
+
+.search {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: none;
+
+    -fx-control-inner-background: -cpt-surface2;
+    -fx-background-color: -cpt-surface2;
+
+    -fx-text-fill: -cpt-text;
+
+    -fx-background-radius: 10px;
+}
+
 .menu {
     -fx-background-color: -cpt-surface0;
 }
