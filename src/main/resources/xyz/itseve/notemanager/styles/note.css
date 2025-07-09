@@ -20,6 +20,22 @@
     -fx-background-radius: 10px;
 }
 
+.note-priority {
+    -fx-opacity: 0.4;
+}
+
+#high {
+    -fx-text-fill: -cpt-red;
+}
+
+#medium {
+    -fx-text-fill: -cpt-yellow;
+}
+
+#low {
+    -fx-text-fill: -cpt-green;
+}
+
 #adl {
     -fx-text-fill: -cpt-text;
     -fx-opacity: 0.3;

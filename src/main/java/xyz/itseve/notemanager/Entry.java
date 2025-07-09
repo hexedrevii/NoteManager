@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import xyz.itseve.notemanager.controllers.NoteViewController;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -19,6 +20,9 @@ public class Entry extends Application {
                 Entry.class.getResource("styles/note-view.css")
             ).toExternalForm()
         );
+
+        NoteViewController controller = fxmlLoader.getController();
+        controller.setMainStage(stage);
 
         stage.setTitle("Note Manager");
         stage.setScene(scene);

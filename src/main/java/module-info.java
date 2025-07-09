@@ -7,4 +7,6 @@ module xyz.itseve.notemanager {
 
     opens xyz.itseve.notemanager to javafx.fxml;
     exports xyz.itseve.notemanager;
+    exports xyz.itseve.notemanager.controllers;
+    opens xyz.itseve.notemanager.controllers to javafx.fxml;
 }
