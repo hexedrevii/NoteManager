@@ -1,6 +1,5 @@
 package xyz.itseve.notemanager;
 
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -14,7 +13,6 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import xyz.itseve.notemanager.controllers.AddNoteController;
 import xyz.itseve.notemanager.controllers.EditNoteController;
 import xyz.itseve.notemanager.controllers.NoteViewController;
 
@@ -34,7 +32,7 @@ public class Note {
         title = newTitle;
     }
 
-    private String content;
+    private final String content;
 
     private NotePriority priority;
     public void setPriority(NotePriority newPriority) {
@@ -139,7 +137,7 @@ public class Note {
         edit.setOnAction((event) -> {
             FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(Entry.class.getResource("edit-note.fxml")));
 
-            Parent root = null;
+            Parent root;
             try {
                 root = loader.load();
             } catch (IOException e) {
@@ -153,7 +151,7 @@ public class Note {
             controller.setParent(noteController);
             controller.setSelf(this);
 
-            editNote.setTitle("Add note");
+            editNote.setTitle("Edit note");
             editNote.initModality(Modality.APPLICATION_MODAL);
             editNote.setScene(new Scene(root));
             editNote.initOwner(noteController.getMainStage());

@@ -1,6 +1,5 @@
 package xyz.itseve.notemanager.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +11,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import xyz.itseve.notemanager.Entry;
 import xyz.itseve.notemanager.Note;
-import xyz.itseve.notemanager.NotePriority;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,7 +32,7 @@ public class NoteViewController implements Initializable {
         return mainStage;
     }
 
-    public final List<Note> notes = new ArrayList<Note>();
+    public final List<Note> notes = new ArrayList<>();
 
     private void calculateNotes(String txt) {
         cardHolder.getChildren().clear();
@@ -52,13 +50,11 @@ public class NoteViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        searchFilter.textProperty().addListener((obs, oldText, newText) -> {
-            calculateNotes(newText);
-        });
+        searchFilter.textProperty().addListener((obs, oldText, newText) -> calculateNotes(newText));
     }
 
     @FXML
-    private void openCreateDialogue(ActionEvent actionEvent) throws IOException {
+    private void openCreateDialogue() throws IOException {
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(Entry.class.getResource("add-note.fxml")));
         Parent root = loader.load();
         Stage addNote = new Stage();
@@ -83,7 +79,7 @@ public class NoteViewController implements Initializable {
     }
 
     @FXML
-    private void closeWindow(ActionEvent actionEvent) {
+    private void closeWindow() {
         mainStage.close();
     }
 }

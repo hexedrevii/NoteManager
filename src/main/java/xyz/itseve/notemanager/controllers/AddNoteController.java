@@ -39,7 +39,7 @@ public class AddNoteController implements Initializable {
     }
 
     @FXML
-    private void createNote(ActionEvent actionEvent) {
+    private void createNote() {
         String priority = notePriority.getSelectionModel().getSelectedItem();
         if (priority == null) {
             Alert alert = new Alert(
@@ -67,7 +67,7 @@ public class AddNoteController implements Initializable {
     }
 
     @FXML
-    private void cancelCreation(ActionEvent actionEvent) {
+    private void cancelCreation() {
         parentStage.close();
     }
 }
