@@ -41,11 +41,11 @@ public class EditNoteController implements Initializable {
         notePriority.getItems().setAll("High", "Medium", "Low");
     }
 
-    public void cancelCreation(ActionEvent event) {
+    public void cancelCreation() {
         parentStage.close();
     }
 
-    public void editNote(ActionEvent event) {
+    public void editNote() {
         String priority = notePriority.getSelectionModel().getSelectedItem();
         if (priority == null) {
             Alert alert = new Alert(
