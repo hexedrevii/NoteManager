@@ -30,6 +30,10 @@ public class NoteViewController implements Initializable {
         mainStage = stage;
     }
 
+    public Stage getMainStage() {
+        return mainStage;
+    }
+
     public final List<Note> notes = new ArrayList<Note>();
 
     private void calculateNotes(String txt) {
