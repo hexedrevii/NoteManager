@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class AddNoteController implements Initializable {
     @FXML private TextField noteTitle;
-    @FXML private ComboBox<String> notePriority;
+    @FXML private ComboBox<NotePriority> notePriority;
 
     private Stage parentStage;
     public void setParentStage(Stage stage) {
@@ -34,7 +34,7 @@ public class AddNoteController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        notePriority.getItems().setAll("High", "Medium", "Low");
+        notePriority.getItems().setAll(NotePriority.values());
     }
 
     @FXML
@@ -61,7 +61,7 @@ public class AddNoteController implements Initializable {
             return;
         }
 
-        note = new Note(title, "", NotePriority.valueOf(priority), noteController);
+        note = new Note(title, "", notePriority.getValue(), noteController);
         parentStage.close();
     }
 
