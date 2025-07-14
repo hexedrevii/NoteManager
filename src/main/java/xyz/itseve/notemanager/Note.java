@@ -135,6 +135,8 @@ public class Note {
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 noteController.notes.removeIf(element -> element.getId() == id);
                 noteController.calculateNotes();
+
+                Entry.saveNotes(noteController.notes);
             }
         });
 
