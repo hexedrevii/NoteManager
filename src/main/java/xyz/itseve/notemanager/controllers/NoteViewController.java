@@ -76,6 +76,8 @@ public class NoteViewController implements Initializable {
 
         notes.addFirst(toAdd);
         calculateNotes();
+
+        Entry.saveNotes(notes);
     }
 
     @FXML

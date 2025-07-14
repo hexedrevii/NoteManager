@@ -32,13 +32,16 @@ public class Note {
         title = newTitle;
     }
 
-    private final String content;
+    private String content;
+    public final String getContent() {
+        return content;
+    }
 
     private NotePriority priority;
     public void setPriority(NotePriority newPriority) {
         priority = newPriority;
     }
-    public NotePriority getPriority() {
+    public final NotePriority getPriority() {
         return priority;
     }
 
@@ -90,6 +93,10 @@ public class Note {
         titleBox.setRight(priorityLabel);
 
         TextArea contentArea = new TextArea(content);
+        contentArea.textProperty().addListener((obs, oldText, newText) -> {
+            content = newText;
+            Entry.saveNotes(noteController.notes);
+        });
         contentArea.setId("cnt");
         contentArea.setWrapText(true);
         contentArea.setPrefColumnCount(4);
@@ -158,6 +165,8 @@ public class Note {
             editNote.setResizable(false);
 
             editNote.showAndWait();
+
+            Entry.saveNotes(noteController.notes);
         });
 
         HBox buttons = new HBox(erase, edit);
