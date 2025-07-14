@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Note Manager
+Comment=Interactively manage notes with a clean GUI.
+Exec=app
+Icon=note_manager
+Type=Application
+Terminal=false
+Categories=Utility;
