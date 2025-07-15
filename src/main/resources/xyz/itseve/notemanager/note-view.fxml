@@ -14,7 +14,7 @@
             <MenuItem mnemonicParsing="false" text="Add note" onAction="#openCreateDialogue"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About" />
+            <MenuItem mnemonicParsing="false" text="About" onAction="#openAboutDialogue"/>
         </Menu>
     </MenuBar>
     <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="318.0" prefWidth="365.0" styleClass="bg-view" VBox.vgrow="ALWAYS">
@@ -25,14 +25,12 @@
         </FlowPane>
     </ScrollPane>
     <HBox prefHeight="30.0" prefWidth="200.0" styleClass="action-bar">
-      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icons/search.png" />
-         </image>
-         <HBox.margin>
-            <Insets left="5.0" top="6.0" />
-         </HBox.margin>
-      </ImageView>
+        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <HBox.margin>
+                <Insets left="5.0" top="6.0"/>
+            </HBox.margin>
+            <Image url="@icons/search.png"/>
+        </ImageView>
         <TextField fx:id="searchFilter" promptText="Search by title..." styleClass="search">
            <HBox.margin>
                <Insets left="4.0" top="2.4" />

@@ -1,5 +1,6 @@
 package xyz.itseve.notemanager.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -83,5 +84,23 @@ public class NoteViewController implements Initializable {
     @FXML
     private void closeWindow() {
         mainStage.close();
+    }
+
+    @FXML
+    private void openAboutDialogue(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(Entry.class.getResource("about.fxml")));
+        Parent root = loader.load();
+        Stage aboutView = new Stage();
+
+        AboutController controller = loader.getController();
+        controller.setParentStage(aboutView);
+
+        aboutView.setTitle("About NoteManager");
+        aboutView.initModality(Modality.APPLICATION_MODAL);
+        aboutView.setScene(new Scene(root));
+        aboutView.initOwner(mainStage);
+        aboutView.setResizable(false);
+
+        aboutView.showAndWait();
     }
 }
